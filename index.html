@@ -11,6 +11,7 @@
             text-align: center;
             margin: 0 !important;
       padding: 0 !important;
+      overflow: hidden
         }
         canvas
         {
@@ -22,6 +23,12 @@
 <body>
     <canvas width="640" height="480"></canvas>
     <script>
+    window.addEventListener("keydown", function(e) {
+    // space and arrow keys
+    if([32, 37, 38, 39, 40].indexOf(e.keyCode) > -1) {
+        e.preventDefault();
+    }
+}, false);
 
     var canvas = document.querySelector("canvas");
     var drawingSurface = canvas.getContext("2d");
